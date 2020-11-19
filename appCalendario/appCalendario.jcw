@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>appCalendario</label>
+	</settings>
+	<users>
+		<user>
+			<path>appCalendario.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>appCalendario.jcp</path>
+		</project>
+	</projects>
+</workspace>
