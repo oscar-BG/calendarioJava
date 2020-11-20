@@ -24,6 +24,7 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 	private JMenuBar barraMenu;
 	private JMenu menuArchivo;
 	private JMenuItem menuItemNuevo;
+	private JMenuItem menuItemBuscarNota;
 	private JPopupMenu menuEmergente;
 	
 	//Caracteristicas
@@ -76,12 +77,17 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 		
 		barraMenu = new JMenuBar();
 		menuArchivo = new JMenu();
-		menuItemNuevo = new JMenuItem();	
+		menuItemNuevo = new JMenuItem();
+		menuItemBuscarNota = new JMenuItem();	
 		menuEmergente = new JPopupMenu();
 		
 		//Crear los items
 		menuItemNuevo.setText("Nueva nota");
 		menuArchivo.add(menuItemNuevo);
+		menuArchivo.addSeparator();
+		menuItemBuscarNota.setText("Buscar Nota");
+		menuArchivo.add(menuItemBuscarNota);
+		
 		
 		//Agregamos los menus de la barra de Menu
 		menuArchivo.setText("Archivo");
@@ -93,6 +99,7 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 		
 		//Creamos los eventos para las opciones
 		menuItemNuevo.addActionListener(this);
+		menuItemBuscarNota.addActionListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e){
@@ -101,6 +108,9 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 			
 			ventanaNotas vNotas = new ventanaNotas();
 			vNotas.setVisible(true);
+		}
+		else if(e.getSource() == menuItemBuscarNota){
+			JOptionPane.showMessageDialog(null, "Hola","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 }

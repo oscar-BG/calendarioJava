@@ -51,7 +51,13 @@ public class ventanaNotas extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == btnCrearNota){
-			JOptionPane.showMessageDialog(null,"Si funciona","V",JOptionPane.INFORMATION_MESSAGE);
+			try{
+				PrintWriter escribir = new PrintWriter("nota1.txt","UTF-8");
+				escribir.println(txtNota.getText());
+				escribir.close();
+			} catch (Exception e1){
+				e1.printStackTrace();
+			}
 		}
 	}
 		
