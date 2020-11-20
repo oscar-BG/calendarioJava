@@ -8,11 +8,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
+import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
-public class ventanaCalendar extends JFrame{
+public class ventanaCalendar extends JFrame implements ActionListener{
 	
 	private JPanel panel1;
 	private JTable tbSemana;
@@ -89,5 +91,16 @@ public class ventanaCalendar extends JFrame{
 		//Agregamos el menu en el panel
 		panel1.setComponentPopupMenu(menuEmergente);
 		
+		//Creamos los eventos para las opciones
+		menuItemNuevo.addActionListener(this);
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		if(e.getSource() == menuItemNuevo){
+			//JOptionPane.showMessageDialog(null, "Hola","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+			
+			ventanaNotas vNotas = new ventanaNotas();
+			vNotas.setVisible(true);
+		}
 	}
 }
