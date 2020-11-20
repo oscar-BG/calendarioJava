@@ -19,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>appCalendario</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
@@ -31,6 +31,10 @@
 			</folderitem>
 			<fileitem>
 				<path>src\appCalendario.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\ventanaCalendar.java</path>
 				<folder>src</folder>
 			</fileitem>
 		</include>

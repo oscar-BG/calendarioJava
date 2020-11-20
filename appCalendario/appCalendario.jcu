@@ -14,6 +14,24 @@
 			<folderitem>
 				<path>src</path>
 			</folderitem>
+			<fileitem>
+				<path>src\ventanaCalendar.java</path>
+				<collapsedfolds>0;0;43;35</collapsedfolds>
+			</fileitem>
 		</project>
 	</projects>
+	<open_files>
+		<docitem>
+			<path>src\appCalendario.java</path>
+			<source>true</source>
+			<index>0</index>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>src\ventanaCalendar.java</path>
+			<source>true</source>
+			<index>1</index>
+			<active>true</active>
+		</docitem>
+	</open_files>
 </workspace_user>
