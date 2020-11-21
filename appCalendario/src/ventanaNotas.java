@@ -4,10 +4,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import java.awt.Color;
 import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class ventanaNotas extends JFrame implements ActionListener{
@@ -16,6 +20,7 @@ public class ventanaNotas extends JFrame implements ActionListener{
 	private JLabel lblMensaje;
 	private JTextField txtNota;
 	private JButton btnCrearNota;
+	private JTextArea txtAreaNota;
 	
 	public ventanaNotas(){
 		setTitle("Crear nota");
@@ -37,9 +42,16 @@ public class ventanaNotas extends JFrame implements ActionListener{
 		lblMensaje.setBounds(100,20,100,20);
 		panel.add(lblMensaje);
 		
+		txtAreaNota = new JTextArea();
+		txtAreaNota.setBounds(15,50,250,200);
+		panel.add(txtAreaNota);
+		
+		/*/Codigo por borrar
 		txtNota = new JTextField();
 		txtNota.setBounds(15,50,250,200);
 		panel.add(txtNota);
+		/*/
+		
 		
 		btnCrearNota = new JButton();
 		btnCrearNota.setText("Crear nota");
@@ -51,9 +63,18 @@ public class ventanaNotas extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == btnCrearNota){
+			
+			//Obtener fecha del sistema Operativo
+			Date date = new Date();
+			DateFormat horaFecha = new SimpleDateFormat("HHmmssddMMyyyy");
+			JLabel lblFechaHora = new JLabel();
+			String CadenahoraFecha = horaFecha.format(date);
+			//
+			
 			try{
-				PrintWriter escribir = new PrintWriter("nota1.txt","UTF-8");
-				escribir.println(txtNota.getText());
+				PrintWriter escribir = new PrintWriter(CadenahoraFecha+".txt","UTF-8");
+				//escribir.println(txtNota.getText());
+				escribir.println(txtAreaNota.getText());
 				escribir.close();
 			} catch (Exception e1){
 				e1.printStackTrace();

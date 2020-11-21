@@ -9,10 +9,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ventanaCalendar extends JFrame implements ActionListener{
 	
@@ -100,6 +103,15 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 		//Creamos los eventos para las opciones
 		menuItemNuevo.addActionListener(this);
 		menuItemBuscarNota.addActionListener(this);
+		
+		//ponemos la fecha
+		Date date = new Date();
+		DateFormat horaFecha = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+		JLabel lblFechaHora = new JLabel();
+		String CadenahoraFecha = horaFecha.format(date);
+		lblFechaHora.setText(CadenahoraFecha);
+		lblFechaHora.setBounds(10,400,200,40);
+		panel1.add(lblFechaHora);
 	}
 	
 	public void actionPerformed(ActionEvent e){
@@ -110,7 +122,10 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 			vNotas.setVisible(true);
 		}
 		else if(e.getSource() == menuItemBuscarNota){
-			JOptionPane.showMessageDialog(null, "Hola","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+			//JOptionPane.showMessageDialog(null, "Hola","INFORMACION",JOptionPane.INFORMATION_MESSAGE);
+			
+			ventanaBuscarNota vBuscarNotas = new ventanaBuscarNota();
+			vBuscarNotas.setVisible(true);
 		}
 	}
 }

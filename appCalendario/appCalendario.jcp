@@ -34,7 +34,15 @@
 				<folder>src</folder>
 			</fileitem>
 			<fileitem>
+				<path>src\ventanaBuscarNota.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
 				<path>src\ventanaCalendar.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\ventanaNotas.java</path>
 				<folder>src</folder>
 			</fileitem>
 		</include>
