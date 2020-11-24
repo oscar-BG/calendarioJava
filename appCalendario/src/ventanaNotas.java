@@ -67,13 +67,16 @@ public class ventanaNotas extends JFrame implements ActionListener{
 			try{
 				//PrintWriter escribir = new PrintWriter(CadenahoraFecha+".txt","UTF-8");
 				PrintWriter escribir = new PrintWriter(url,"UTF-8");
+				PrintWriter nombreNota = new PrintWriter("nombreNotas.txt","UTF-8");
+				nombreNota.println(CadenahoraFecha);
 				escribir.println(txtAreaNota.getText());
 				escribir.close();
+				nombreNota.close();
 			} catch (Exception e1){
 				e1.printStackTrace();
 			}
 			
-			txtAreaNota.setText(url);
+			txtAreaNota.setText("");
 		}
 	}
 		
