@@ -13,11 +13,7 @@
 			</folderitem>
 			<fileitem>
 				<path>src\ventanaCalendar.java</path>
-				<collapsedfolds>0;0;0;0;50;42;30</collapsedfolds>
-			</fileitem>
-			<fileitem>
-				<path>src\ventanaNotas.java</path>
-				<collapsedfolds>0</collapsedfolds>
+				<collapsedfolds>0;0;0;0;116;78;45;33</collapsedfolds>
 			</fileitem>
 		</project>
 	</projects>
@@ -26,13 +22,13 @@
 			<path>src\appCalendario.java</path>
 			<source>true</source>
 			<index>0</index>
-			<active>true</active>
+			<active>false</active>
 		</docitem>
 		<docitem>
 			<path>src\ventanaCalendar.java</path>
 			<source>true</source>
 			<index>1</index>
-			<active>false</active>
+			<active>true</active>
 		</docitem>
 		<docitem>
 			<path>src\ventanaNotas.java</path>

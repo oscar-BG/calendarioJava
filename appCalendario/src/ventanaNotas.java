@@ -46,13 +46,6 @@ public class ventanaNotas extends JFrame implements ActionListener{
 		txtAreaNota.setBounds(15,50,250,200);
 		panel.add(txtAreaNota);
 		
-		/*/Codigo por borrar
-		txtNota = new JTextField();
-		txtNota.setBounds(15,50,250,200);
-		panel.add(txtNota);
-		/*/
-		
-		
 		btnCrearNota = new JButton();
 		btnCrearNota.setText("Crear nota");
 		btnCrearNota.setBounds(100,280,100,20);
@@ -66,19 +59,21 @@ public class ventanaNotas extends JFrame implements ActionListener{
 			
 			//Obtener fecha del sistema Operativo
 			Date date = new Date();
-			DateFormat horaFecha = new SimpleDateFormat("HHmmssddMMyyyy");
+			DateFormat horaFecha = new SimpleDateFormat("HH_mm_ss-dd_MM_yyyy");
 			JLabel lblFechaHora = new JLabel();
 			String CadenahoraFecha = horaFecha.format(date);
 			//
-			
+			String url = "notas/"+CadenahoraFecha+".txt";
 			try{
-				PrintWriter escribir = new PrintWriter(CadenahoraFecha+".txt","UTF-8");
-				//escribir.println(txtNota.getText());
+				//PrintWriter escribir = new PrintWriter(CadenahoraFecha+".txt","UTF-8");
+				PrintWriter escribir = new PrintWriter(url,"UTF-8");
 				escribir.println(txtAreaNota.getText());
 				escribir.close();
 			} catch (Exception e1){
 				e1.printStackTrace();
 			}
+			
+			txtAreaNota.setText(url);
 		}
 	}
 		
