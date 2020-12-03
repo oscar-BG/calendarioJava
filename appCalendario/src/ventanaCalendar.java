@@ -35,7 +35,7 @@ public class ventanaCalendar extends JFrame implements ActionListener{
 		setTitle("Calendario");
 		setSize(500,500);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(1);
 		
 		componentes();
 		tablaSemana();

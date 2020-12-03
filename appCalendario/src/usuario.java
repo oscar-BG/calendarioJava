@@ -3,8 +3,10 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-class usuario extends JFrame{
+class usuario extends JFrame implements  ActionListener{
 	
 	private JPanel panel;
 	private JLabel lblBienvenida;
@@ -16,9 +18,11 @@ class usuario extends JFrame{
 	
 	public usuario(){
 		setTitle("Ingresar Usuario");
-		setSize("300,400");
+		setSize(300,400);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		componetes();
 	}
 	
 	public void componetes(){
@@ -35,28 +39,33 @@ class usuario extends JFrame{
 		//Poner Usuario
 		lblUsuario = new JLabel();
 		lblUsuario.setText("Ingrese su usuario");
-		lblUsuario.setBounds(10,30,100,20);
+		lblUsuario.setBounds(10,40,150,20);
 		panel.add(lblUsuario);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(10,50,100,20);
+		txtUsuario.setBounds(10,60,150,20);
 		panel.add(txtUsuario);
 		
 		//Poner contraseña
 		lblPassword = new JLabel();
 		lblPassword.setText("Ingrese su contraseña");
-		lblPassword.setBounds(10,70,100,20);
+		lblPassword.setBounds(10,80,150,20);
 		panel.add(lblPassword);
 		
 		txtPassword = new JTextField();
-		txtPassword.setBounds(10,90,100,20);
+		txtPassword.setBounds(10,100,150,20);
 		panel.add(txtPassword);
 		
 		//Colocar botones
 		btnAceptar = new JButton();
 		btnAceptar.setText("Ingresar");
-		btnAceptar.setBounds(100,110,50,20);
+		btnAceptar.setBounds(100,150,100,20);
 		panel.add(btnAceptar);
-		
+		btnAceptar.addActionListener(this);	
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		ventanaCalendar cal = new ventanaCalendar();
+		cal.setVisible(true);
 	}
 }
