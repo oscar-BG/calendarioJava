@@ -80,7 +80,11 @@ public class ventanaBuscarNota extends JFrame implements ItemListener{
 		this.getContentPane().add(panelVBN);
 		
 		//Lista desplegable
-		String[] menu = {"Eleguir",nombreNota};
+		//String[] menu = {"Eleguir",nombreNota};
+		String[] menu = new String[10];
+		menu[0] = "Eleguir";
+		menu[1] = nombreNota;
+		
 		
 		cbxListaNotas = new JComboBox(menu);
 		cbxListaNotas.setBounds(10,10,150,30);
