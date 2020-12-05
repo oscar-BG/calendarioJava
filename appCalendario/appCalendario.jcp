@@ -26,6 +26,7 @@
 		</runtime>
 	</runtimes>
 	<libraries>
+		<library_ref>conectorSql</library_ref>
 		<library_ref>calendario</library_ref>
 	</libraries>
 	<files>
@@ -35,6 +36,14 @@
 			</folderitem>
 			<fileitem>
 				<path>src\appCalendario.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\nuevoUsuario.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\usuario.java</path>
 				<folder>src</folder>
 			</fileitem>
 			<fileitem>

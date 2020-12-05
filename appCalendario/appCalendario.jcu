@@ -12,8 +12,12 @@
 				<path>src</path>
 			</folderitem>
 			<fileitem>
-				<path>src\ventanaCalendar.java</path>
-				<collapsedfolds>53;0</collapsedfolds>
+				<path>src\nuevoUsuario.java</path>
+				<collapsedfolds>45;37;0</collapsedfolds>
+			</fileitem>
+			<fileitem>
+				<path>src\usuario.java</path>
+				<collapsedfolds>33;0</collapsedfolds>
 			</fileitem>
 		</project>
 	</projects>
@@ -25,19 +29,19 @@
 			<active>false</active>
 		</docitem>
 		<docitem>
-			<path>src\ventanaCalendar.java</path>
+			<path>src\usuario.java</path>
 			<source>true</source>
 			<index>1</index>
 			<active>true</active>
 		</docitem>
 		<docitem>
-			<path>src\ventanaNotas.java</path>
+			<path>src\nuevoUsuario.java</path>
 			<source>true</source>
 			<index>2</index>
 			<active>false</active>
 		</docitem>
 		<docitem>
-			<path>src\ventanaBuscarNota.java</path>
+			<path>src\ventanaNotas.java</path>
 			<source>true</source>
 			<index>3</index>
 			<active>false</active>
