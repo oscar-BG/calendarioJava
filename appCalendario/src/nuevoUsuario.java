@@ -1,12 +1,26 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class nuevoUsuario extends JFrame{
+public class nuevoUsuario extends JFrame implements ActionListener{
 	
+	static String nombreUsu = "is_admin";
+	static String clave = "123456";
+	static String bdatos = "usuarioAgenda";
+	static String host = "LAPTOP-OBEL3V1L";
+	
+	static public Connection conexion;
+	static public PreparedStatement insertar;
+	 
 	private JLabel lblBienvenida;
 	private JLabel lblIdUsuario;
 	private JLabel lblNombreUsu;
@@ -19,6 +33,8 @@ public class nuevoUsuario extends JFrame{
 	private JButton btnRegistrar;
 	private JPanel panel;
 	
+
+					
 	public nuevoUsuario(){
 		setTitle("Registrar nuevo Usuario");
 		setSize(400,400);
@@ -84,5 +100,33 @@ public class nuevoUsuario extends JFrame{
 		btnRegistrar.setText("Registrar");
 		btnRegistrar.setBounds(110,260,100,20);
 		panel.add(btnRegistrar);
+		
+		btnRegistrar.addActionListener(this);
 	}
+	
+	public void actionPerformed(ActionEvent e){
+		if(e.getSource() == btnRegistrar){
+			
+			try{
+				String inserSQl = "INSERT INTO usuarios(idUsuario,nombreUsuario,clave)"+
+					"VALUES ('"+ txtIdUsuario.getText() + "','" +
+					txtNombreUsu.getText() + "','"+
+					txtClave.getText() + "')";
+					
+				System.out.println(inserSQl);
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+				String url  = "jdbc:sqlserver://"+
+					host + ":1433;databaseName="+
+					bdatos+";";
+				conexion = DriverManager.getConnection(url,nombreUsu,clave);
+				insertar = conexion.prepareStatement(inserSQl);
+				insertar.execute();
+				
+			}catch(ClassNotFoundException | SQLException ex){
+				System.out.println("Error");
+			}
+		}
+		
+	}
+	
 }
