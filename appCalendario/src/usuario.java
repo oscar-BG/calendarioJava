@@ -15,10 +15,11 @@ class usuario extends JFrame implements  ActionListener{
 	private JTextField txtUsuario;
 	private JTextField txtPassword;
 	private JButton btnAceptar;
+	private JButton btnNuevoUsu;
 	
 	public usuario(){
 		setTitle("Ingresar Usuario");
-		setSize(300,400);
+		setSize(300,500);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
@@ -59,13 +60,25 @@ class usuario extends JFrame implements  ActionListener{
 		//Colocar botones
 		btnAceptar = new JButton();
 		btnAceptar.setText("Ingresar");
-		btnAceptar.setBounds(100,150,100,20);
+		btnAceptar.setBounds(10,150,100,20);
 		panel.add(btnAceptar);
 		btnAceptar.addActionListener(this);	
+			
+		btnNuevoUsu = new JButton();
+		btnNuevoUsu.setText("Nuevo Usuario");
+		btnNuevoUsu.setBounds(150,150,150,20);
+		panel.add(btnNuevoUsu);
+		btnNuevoUsu.addActionListener(this);
 	}
 	
 	public void actionPerformed(ActionEvent e){
-		ventanaCalendar cal = new ventanaCalendar();
-		cal.setVisible(true);
+		if(e.getSource() == btnAceptar){
+			ventanaCalendar cal = new ventanaCalendar();
+			cal.setVisible(true);
+		}
+		if(e.getSource() == btnNuevoUsu){
+			nuevoUsuario nUsu = new nuevoUsuario();
+			nUsu.setVisible(true);
+		}
 	}
 }
