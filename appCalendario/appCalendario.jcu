@@ -12,8 +12,12 @@
 				<path>src</path>
 			</folderitem>
 			<fileitem>
+				<path>src\nuevoUsuario.java</path>
+				<collapsedfolds>46;37;0</collapsedfolds>
+			</fileitem>
+			<fileitem>
 				<path>src\usuario.java</path>
-				<collapsedfolds>0</collapsedfolds>
+				<collapsedfolds>83;38;29;0</collapsedfolds>
 			</fileitem>
 		</project>
 	</projects>
@@ -34,13 +38,19 @@
 			<path>src\nuevoUsuario.java</path>
 			<source>true</source>
 			<index>2</index>
-			<active>true</active>
+			<active>false</active>
 		</docitem>
 		<docitem>
 			<path>src\ventanaNotas.java</path>
 			<source>true</source>
 			<index>3</index>
 			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>src\ventanaCalendar.java</path>
+			<source>true</source>
+			<index>4</index>
+			<active>true</active>
 		</docitem>
 	</open_files>
 </workspace_user>

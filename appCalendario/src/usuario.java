@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -8,6 +12,12 @@ import java.awt.event.ActionListener;
 
 class usuario extends JFrame implements  ActionListener{
 	
+	static String strUsuario = "is_admin";
+    static String strPassword = "123456";
+    static String strBaseDatos ="usuarioAgenda";
+    static String strHost = "LAPTOP-OBEL3V1L";
+    static Connection Conexion;
+    
 	private JPanel panel;
 	private JLabel lblBienvenida;
 	private JLabel lblUsuario;
@@ -73,12 +83,32 @@ class usuario extends JFrame implements  ActionListener{
 	
 	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == btnAceptar){
+			comprobarUsu();
 			ventanaCalendar cal = new ventanaCalendar();
 			cal.setVisible(true);
 		}
 		if(e.getSource() == btnNuevoUsu){
 			nuevoUsuario nUsu = new nuevoUsuario();
 			nUsu.setVisible(true);
+		}
+	}
+	
+	//Metodo para verificar usuario
+	public void comprobarUsu(){
+		try{
+			
+			String consultarSQL = "Select * from usuarios where idUsuario = '"+ txtUsuario.getText() +"'";
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			String url = "jdbc:sqlserver://" +
+          	           strHost + ":1433;databaseName=" +
+          	           strBaseDatos + ";";
+          	Conexion = DriverManager.getConnection(url,strUsuario,strPassword);
+          	PreparedStatement modificar;
+          	modificar = Conexion.prepareStatement(consultarSQL);
+          	System.out.println(consultarSQL);
+        	modificar.execute();	
+		}catch(ClassNotFoundException | SQLException ex){
+			System.out.println("Error no es posible Actualizar");
 		}
 	}
 }
